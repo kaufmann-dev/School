@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			line-height: 1.6;
+			font-family: 'Verdana', sans-serif;
+		}
+		body {
+			margin: 0;
+			background: #ddd;
+		}
+		main {
+			padding: 0 20px;
+		}
+		header {
+			padding: 10px 0;
+			text-align: center;
+			font-weight: bold;
+			font-size: 3em;
+		}
+		nav {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+			background-color: #333;
+				/* horizontally center */
+				display: flex;
+				justify-content: center;
+		}
+		nav a {
+			float: left;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		nav div {
+			float: left;
+			overflow: hidden;
+		}
+		nav div button {
+			line-height: inherit;
+			border: none;
+			outline: none;
+			color: white;
+			padding: 14px 16px;
+			font-size: 1em;
+			background-color: inherit;
+			font-family: inherit;
+			margin: 0;
+		}
+		nav a:hover, nav div button:hover {
+			background-color: #222;
+		}
+		nav div div {
+			border-right: 1px solid #222;
+			border-left: 1px solid #222;
+			border-bottom: 1px solid #222;
+			display: none;
+			position: absolute;
+			background-color: #eee;
+			min-width: 160px;
+			z-index: 1;
+		}
+		nav div div hr {
+			border: 0;
+			height: 1px;
+			background: #222;
+			margin: 0;
+		}
+		nav div div a {
+			float: none;
+			color: black;
+			padding: 12px 14px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+		nav div div a:hover {
+			background-color: #ddd;
+		}
+		nav div:hover > div {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<header>Heading</header>
+	<nav>
+		<a href="#">Home</a>
+		<div>
+			<button>Products</button>
+			<div>
+				<a href="#">Lorem Ipsum dolor</a>
+				<a href="#">Lorem</a>
+				<hr>
+				<a href="#">Lorem Ipsum</a>
+				</div>
+			</div>
+			<div>
+			<button>Links</button>
+			<div>
+				<a href="#">Lorem</a>
+				<a href="#">Lorem Ipsum</a>
+				</div>
+			</div>
+		<a href="#">About</a>
+	</nav>
+	<main>
+		<h1>Lorem Ipsum</h1><hr>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+	</main>
+</body>
+</html>

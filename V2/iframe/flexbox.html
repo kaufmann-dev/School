@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Webseite</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style type="text/css">
+		body, html {
+			box-sizing: border-box;
+			margin: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+		h1, h2, p {
+			margin: 0;
+		}
+		nav, footer {
+			color: #FFF;
+			background-color: #333;
+			padding: 30px;
+		}
+		nav:hover, footer:hover {
+			background-color: #222;
+		}
+		main {
+			display: flex;
+		}
+		#left, #right {
+			color: #FFF;
+			background-color: #666;
+			padding: 30px;
+			flex: 1;
+		}
+		#left:hover, #right:hover {
+			background-color: #555;
+		}
+		#content {
+			padding: 30px;
+			flex: 3;
+			display: flex;
+		}
+		.content-pieces {
+			margin-right: 30px;
+			min-height: 300px;
+			background-color: #DDD;
+			padding: 30px;
+			flex: 1;
+		}
+		.content-pieces:hover {
+			background-color: #CCC;
+		}
+		#last {
+			margin-right: 0px !important;
+		}
+	</style>
+</head>
+<body>
+
+	<nav><h1>Obere Navigationsleiste</h1></nav>
+
+	<main>
+
+	<div id="left"><h2>Linke navigationsleiste</h2></div>
+
+	<div id="content">
+		<div class="content-pieces"><p>Erste Box</p></div>
+		<div class="content-pieces"><p>Zweite Box</p></div>
+		<div class="content-pieces" id="last"><p>Dritte Box</p></div>
+	</div>
+
+	<div id="right"><h2>Zusätzlicher Inhalt</h2></div>
+
+	</main>
+
+	<footer><h1>Fußleiste</h1></footer>
+
+</body>
+</html>

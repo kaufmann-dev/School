@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>C# | Grundlagen</title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="icon" href="img/logo.png">
+</head>
+<body>
+
+   <header>Grundlagen</header>
+
+   <nav>
+      <a href="index.html">Index</a>
+      <div>
+         <button>Wissenschaften</button>
+         <div>
+            <a href="mathe.html">Mathe</a>
+            <a href="physik.html">Physik</a>
+            <a href="chemie.html">Chemie</a>
+         </div>
+      </div>
+      <div>
+         <button>Sprachen</button>
+         <div>
+            <a href="deutsch.html">Deutsch</a>
+            <a href="englisch.html">Englisch</a>
+         </div>
+      </div>
+      <div>
+         <button>IT</button>
+         <div>
+            <a href="javascript:void(0)">C#</a>
+            <a href="htmlcss.html">HTML und CSS</a>
+            <a href="netzwerktechnik.html">Netzwerktechnik</a>
+            <a href="elektrotechnik.html">Elektrotechnik</a>
+         </div>
+      </div>
+      <div>
+         <button>Sonstige Fächer</button>
+         <div>
+            <a href="geografie.html">Geografie</a>
+         </div>
+      </div>
+   </nav>
+
+   <main>
+
+   <div id="wrapper">
+      <section>
+         <h1>Grundlegende Syntax</h1><hr>
+<pre>
+using System;
+
+namespace Example
+{
+   class Program
+   {
+      public static void Main(string[] args)
+      {
+
+      }
+   }
+}
+</pre>
+      </section>
+
+      <section>
+         <h1>Grundlegende Syntax mit einfachem Beispiel</h1><hr>
+<pre>
+using System;
+
+namespace Example
+{
+   class Program
+   {
+      public static void Main(string[] args)
+      {
+         Console.WriteLine("Hello World!");
+
+         int result = Calculate(3, 6);
+         Console.WriteLine(result);
+
+         Console.ReadKey();
+      }
+      public static int Calculate(int a, int b)
+      {
+         int c = new int();
+         c = a + b;
+         return c;
+      }
+   }
+}
+</pre>
+<pre class="green">
+Hello World!
+9
+</pre>
+      </section>
+
+      <section>
+         <h1>Datentypen</h1><hr>
+         <h2>Short</h2>
+         <p>Mit dem Datentypen <code>short</code> speichert man Zahlen mit einer maximalen Länger von 16 Bit, also von ungefähr -30.000 bis ungefähr 30.000. Man kann allerdings nur ganze Zahlen speichern.</p>
+<pre>
+short a = new short();
+a = 30000;  
+</pre>
+         <h2>Int</h2>
+         <p>Mit dem Datentypen <code>int</code> speichert man Zahlen mit einer maximalen Länger von 32 Bit, also von ungefähr -2.000.000.000 bis ungefähr 2.000.000.000. Man kann allerdings nur ganze Zahlen speichern.</p>
+<pre>
+int b = new int();
+b = 300000000; 
+</pre>
+         <h2>Long</h2>
+         <p>Mit dem Datentypen <code>long</code> speichert man Zahlen mit einer maximalen Länger von 64 Bit, also von ungefähr -10.000.000.000.000.000.000 bis ungefähr 10.000.000.000.000.000.000. Man kann allerdings nur ganze Zahlen speichern.</p>
+<pre>
+long c = new long();
+c = 3000000000000000000;   
+</pre>
+         <h2>Float</h2>
+         <p>Der Datentyp <code>float</code> speichert Dezimalzalen mit einer Genauigkeit von bis zu 7. Man muss allerdings ein <code>F</code> an das Ende der Zahl stellen damit dich der Computer die beiden Datentypen <code>float</code> und <code>double</code> unterscheiden kann.</p>
+<pre>
+double h = new double();
+h = 4.19472017593756;
+</pre>
+         <h2>Double</h2>
+         <p>Der Datentyp <code>double</code> speichert Dezimalzalen mit einer Genauigkeit von bis zu 15.</p>
+<pre>
+float i = new float();
+i = 4.394234F;
+</pre>
+         <h2>Bool</h2>
+         <p>Der Datentyp <code>bool</code> kann entweder richtig oder falsch speichern.</p>
+<pre>
+bool d = new bool();
+d = true;
+</pre>
+         <h2>String</h2>
+         <p>In den meisten Fällen wird der Datentyp <code>string</code> verwendet um Text zu speichern.</p>
+<pre>
+string e = System.String.Empty;
+e = "Hello World!";
+</pre>
+         <h2>Var</h2>
+         <p>Der Datentyp <code>var</code> kann anstelle von allen anderen Datentypen verwendet werden. Das funktioniert indem der Compiler den expliziten Typ der Variable basierend auf der Verwendung bestimmt. Die kann ein bisschen Zeit und Code sparen, allerdings verliert man dafür ein bisschen Übersicht. <code>var f = 5</code> führt dazu, dass der Compiler automatisch erkennt, dass 5 der Datentyp <code>int</code> ist und wird den Code im Wesentlichen für das Programm zu <code>int f = 5</code> umschreiben.</p>
+<pre>
+var f = 3;
+</pre>
+<pre>
+var f = "Hello World!";
+</pre>
+<pre>
+var f = new Connection();
+</pre>
+         <h2>Char</h2>
+         <p>Der Datentyp <code>char</code> wird meistens verwendet um einzelne Variablen zu speichern.</p>
+<pre>
+char g = new char();
+g = 'X';
+</pre>
+      </section>
+
+      <section>
+         <h1>Arrays</h1><hr>
+         <p>Arryas sind Sammlungen bzw. Listen von Werten.<br>Alle gespeicherten Werte in einem Array müssen dem gleichen Datentyp entsprechen, welcher bereits bei der Initialisierung angegeben wird.<br>Arrays können eindimensional (Listen) oder multidimensional (Felder, 3D-Umgebungen, ...) sein.</p>
+         <h2>(1D-)Arrays</h2>
+         <p>Eindimensionale Arrays werden für klassiche Sammlungen von Werten verwendet. Man benötigt sie um z. B. mehrere ausgerechnete Werte zu speichern die zusammen gehören.</p>
+<pre>
+int[] j = new int[3];
+j[0] = 3;
+j[1] = 8;
+j[2] = 4;
+
+<span class="slash">// 3</span>
+<span class="slash">// 8</span>
+<span class="slash">// 4</span>
+</pre>
+         <h2>2D-Arrays</h2>
+         <p>Zweidimensionale Arrays werden für "Felder von Werten" verwendet. Man benötigt sie um z. B. ein "Vier Gewinnt" Spiel in der Konsole zu simulieren.</p>
+<pre>
+int[,] k = new int[2, 2];
+k[0, 0] = 6;
+k[0, 1] = 2;
+k[1, 0] = 1;
+k[1, 1] = 9;
+
+<span class="slash">// 6 1</span>
+<span class="slash">// 2 9</span>
+</pre>
+      </section>
+
+      <section>
+         <h1>If/Else-Anweisung, While-Schleife und For-Schleife</h1>
+         <h2>If/Else-Anweisung</h2>
+         <p>Eine If/Else-Anweisung führt eine Funktion aus wenn sie als wahr eingestuft wurde.</p>
+<pre>
+int x = 3;
+
+if(x > 0)
+{
+   Console.WriteLine("X ist größer als 0.");
+}
+else
+{
+   Console.WriteLine("X ist kleiner als 0.");
+}
+</pre>
+<pre class="green">
+X ist größer als 0.
+</pre>
+         <p><code>if/else</code>-Anweisungen können auch ohne Klammern geschrieben werden.</p>
+<pre>
+if(x > 0)
+   Console.WriteLine("X ist größer als 0.");
+else
+   Console.WriteLine("X ist kleiner als 0.");
+</pre>
+         <h2>While-Schleife</h2>
+         <p>Eine <code>while</code> Schleife führt so lange ihre Funktionen aus bis ihre Vorraussetzung nicht mehr wahr ist. Sie kann nicht ohne Klammern geschrieben werden.</p>
+<pre>
+int y = 3;
+
+while (y > 0)
+{
+   Console.WriteLine ("Y ist größer als 0.");
+   y--;
+}
+</pre>
+<pre class="green">
+Y ist größer als 0.
+Y ist größer als 0.
+Y ist größer als 0.
+</pre>
+         <h2>For-Schleife</h2>
+         <p>Die <code>for</code> Schleife verwendet man, wenn die Anzahl der Durchläufe bekannt ist. Es ist eine Zähler-gesteuerte Schleife. Sie hat 3 Bereiche.<br><br>Bereich 1: Startwert der Zählvariablen setzen, z. B. <code>i = 0</code><br>Bereich 2: Durchlauf-Bedingung, z. B. <code>i < 5</code><br>Bereich 3: Operation auf Zählvariable ausführen, z. B. <code>i++</code></p>
+<pre>
+for (int i = 0, j = 1; i < 5; i++, j++)
+{
+   Console.WriteLine("Es ist Durchlauf " + j + "!");
+}
+</pre>
+<pre class="green">
+Es ist Durchlauf 1!
+Es ist Durchlauf 2!
+Es ist Durchlauf 3!
+Es ist Durchlauf 4!
+Es ist Durchlauf 5!
+</pre>
+      </section>
+
+      <section>
+         <h1>Switch</h1>
+         <p>Switches werden verwendet um </p>
+<pre>
+int color = 2;
+switch(color)
+{
+   case 1:
+      Console.BackgroundColor = ConsoleColor.DarkRed;
+      Console.WriteLine("Der Hintergrund ist dunkles Rot!");
+      break;
+   case 2:
+      Console.BackgroundColor = ConsoleColor.Maroon;
+      Console.WriteLine("Der Hintergrund ist Maroon!");
+      break;
+   case 3:
+      Console.BackgroundColor = ConsoleColor.Navy;
+      Console.WriteLine("Der Hintergrund ist Navy!");
+      break;
+   case 4:
+      Console.BackgroundColor = ConsoleColor.DarkGoldenrod;
+      Console.WriteLine("Der Hintergrund ist dunkles Gold!");
+      break;
+   case 5:
+      Console.BackgroundColor = ConsoleColor.Purple;
+      Console.WriteLine("Der Hintergrund ist Lila!");
+      break;
+   default:
+      Console.ResetColor();
+      Console.WriteLine("Der Hintergrund ist Standart-Farbe!");
+      break;
+}
+</pre>
+<pre class="green maroon">
+Der Hintergrund ist Maroon!
+</pre>
+      </section>
+
+      <section>
+         <h1>Enums und Points</h1>
+         <h2>Enums</h2>
+         <p>Ein <code>enum</code> besteht aus einer Reihe benannter ganzzahliger Konstanten. Ein Aufzählungstyp wird mit dem Schlüsselwort <code>enum</code> deklariert.<br>Um ein <code>enum</code> zu erstellen muss man in Visual Studio eine Klasse hinzufügen und <code>class Example</code> in <code>public enum Example</code> umändern.</p>
+<pre>
+using System;
+
+namespace PlayField
+{
+   public enum FieldType
+   {
+      HEAVY_SWORDSMAN, ARCHER, LIGHT_INFRANTRY, SNIPER 
+   }
+}
+</pre>
+<pre>
+int[,] m = new int[3, 3];
+m[2, 2] = (int)FieldType.SNIPER;
+Console.WriteLine(m[2, 2]);
+Console.WriteLine((FieldType)m[2, 2]);
+</pre>
+<pre class="green">
+3
+SNIPER
+</pre>
+         <h2>Points</h2>
+         <p>Ein <code>point</code> ist eine der Verwendungszwecke für die Klasse <code>struct</code>. Er wird verwendet um zwei oder mehr geografische Koordinaten zu speichern.<br>Um einen <code>point</code> zu erstellen muss man in Visual Studio eine Klasse hinzufügen und <code>class Example</code> in <code>public struct Point</code> umändern.</p>
+<pre>
+using System;
+
+namespace PlayField
+{
+   public struct Point
+   {
+      public int x; 
+      public int y; 
+   }
+}
+</pre>
+<pre>
+Point p = new Point();
+p.x = 0;
+p.y = 1;
+
+int[,] field = new int[2, 2];
+field[p.x, p.y] = 5;
+
+<span class="slash">// 0 0</span>
+<span class="slash">// 5 0</span>
+</pre>
+      </section>
+
+      <section>
+         <h1>Beispiele</h1>
+         <h2>BMI berechnen</h2>
+<pre>
+float bmi = BMI_berechnen(76.8F, 1.81F);
+Console.WriteLine(bmi);
+</pre>
+<pre>
+public static float BMI_berechnen(float kg, float m)
+{
+   float bmi = kg / (m * m);
+
+   return bmi;
+}
+</pre>
+<pre class="green">
+23,44251
+</pre>
+         <h2>Auf rechtwinkeliges Dreieck überprüfen</h2>
+<pre>
+bool rechtwinkelig = Is_rechtwinkelig(4, 3, 2);
+if (is_rechtwinkelig == true)
+   Console.WriteLine("Das Dreieck ist rechtwinkelig!");
+else
+   Console.WriteLine("Das Dreieck ist nicht rechtwinkelig!");
+</pre>
+<pre>
+public static bool BMI_berechnen(int x, int y, int z)
+{
+   bool is_rechtwinkelig = new bool();
+
+   if ((x * x) + (y * y) == (z * z) || (x * x) + (z * z) == (y * y) || (y * y) + (z * z) == (x * x))
+      is_rechtwinkelig = true;
+   else
+      is_rechtwinkelig = false;
+
+   return is_rechtwinkelig;
+}
+</pre>
+<pre class="green">
+Das Dreieck ist nicht rechtwinkelig!
+</pre>
+         <h2>Dreieck</h2>
+<pre>
+PrintTriangle(8);
+</pre>
+<pre>
+public static void printTriangle(int x)
+{
+   int line = 1;
+
+   while (x > 0)
+   {
+      int tmpLine = line;
+
+      while (line > 0)
+      {
+         Console.Write("*");
+         line = line - 1;
+      }
+
+      line = tmpLine;
+      line = line + 1;
+      Console.WriteLine();
+
+      x = x - 1;
+    }
+ }
+</pre>
+<pre class="green">
+*
+**
+***
+****
+</pre>
+      </section>
+
+      <section class="last">
+         <h1>Code Ausschnitte</h1>
+         <h2>GenerateField</h2>
+<pre>
+public static int[,] GenerateField(int x, int y)
+{
+   int[,] field = new int[x, y];
+
+   return field;
+}
+</pre>
+         <h2>PrintField</h2>
+<pre>
+public static void PrintField(int[,] field)
+{
+    for (int i = 0; i < field.GetLength(1); i++)
+   {
+      for (int j = 0; j < field.GetLength(0); j++)
+      {
+         Console.Write(field[j, i]);
+      }
+
+      Console.WriteLine();
+   }
+}
+</pre>
+         <h2>IsLegal</h2>
+<pre>
+public static bool IsLegal (int[,] field, int x, int y)
+{
+   if (y >= 0 && y <= field.GetLength(1) && x >= 0 && x <= field.GetLength(0))
+   {
+      return true;
+   }
+
+   return false;
+}
+</pre>
+         <h2>CreatePoint</h2>
+<pre>
+public static Point CreatePoint(int x, int y)
+{
+   Point p = new Point();
+
+   p.x = x;
+   p.y = y;
+
+   return p;
+}
+</pre>
+      <h2>Point anlegen</h2>
+<pre>
+using System;
+
+namespace <span class="slash">// Projektname</span>
+{
+   public struct Point
+   {
+      public int x; 
+      public int y; 
+   }
+}
+</pre>
+      <h2>Enum anlegen</h2>
+<pre>
+using System;
+
+namespace <span class="slash">// Projektname</span>
+{
+   public enum <span class="slash">// Enumname</span>
+   {
+      
+   }
+}
+</pre>
+      </section>
+   </div>
+   
+   </main>
+
+   <a href="#"><footer>Top</footer></a>
+
+</body>
+</html>

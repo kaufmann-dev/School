@@ -1,0 +1,268 @@
+/* Basic Styling */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Lexend+Deca|Poiret+One|Raleway:400,600&display=swap');
+* {
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	line-height: 1.6;
+	padding: 0;
+	margin: 0;
+	background-color: #1E1E1E;
+}
+a {
+	font-family: inherit;
+	color: #F05;
+	text-decoration: none;
+}
+main a {
+	border-bottom: 1px solid #F05;
+}
+main a:hover {
+	border: none;
+}
+h1 {
+	font-family: 'Lexend Deca', sans-serif;
+	color: #F05;
+	font-size: 1.6em;
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.2em;
+}
+hr {
+	border: none;
+	height: 2px;
+	background: #AAA;
+}
+h2, h3 {
+	margin: 0.5em 0;
+	padding: 0;
+}
+p, a {
+	padding: 0;
+	margin: 0;
+}
+p {
+	text-align: justify;
+}
+img, video, audio {
+	vertical-align: top;
+}
+/* IT */
+pre {
+	overflow: auto;
+	border: 1px solid #1E1E1E;
+	padding: 10px;
+	font-family: 'IBM Plex Mono', monospace;
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 10px 0;
+		page-break-inside: avoid;
+		max-width: 100%;
+		word-wrap: break-word;
+		display: block;
+}
+pre.green {
+	color: #0D0;
+}
+pre.maroon {
+	box-shadow: inset 0px 0px 5px 0px rgba(30,30,30,1);
+	background-color: #800000;
+}
+code {
+	font-family: 'IBM Plex Mono', monospace;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid #1E1E1E;
+}
+span.slash
+{
+	color: #888;
+	font-family: inherit;
+}
+iframe
+{
+	border: 1px solid #1E1E1E;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	width: 100%;
+	overflow: auto;
+	margin: 5px 0;
+}
+/* Header */
+header {
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+	width: 100%;
+	color: #F05;
+	padding: 20px 0;
+	font-size: 3em;
+}
+/* Main */
+main {
+	color: #DDD;
+	background-color: #303030;
+	width: 100%;
+	padding: 30px;
+}
+div#wrapper {
+	max-width: 100%;
+	width: 1000px;
+	margin: 0 auto;
+}
+section:not(.last) {
+	margin-bottom: 30px;
+}
+/* Image */
+img {
+	border-radius: 15px;
+	margin: 10px 0;
+	width: 49.9%;
+	float: left;
+}
+img .left {
+	margin-right: 10px;
+}
+img .right {
+	margin-left: 10px;
+}
+/* Footer */
+footer {
+	font-weight: 500;
+	font-size: 1.2em;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+	color: #F05;
+}
+/* Navigation bar */
+nav {
+	width: 100%;
+	font-size: 1.1em;
+	background-color: #F05;
+	display: flex;
+	justify-content: center;
+}
+nav a {
+	font-weight: 600;
+	float: left;
+	color: #000;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+nav div {
+	float: left;
+	overflow: hidden;
+}
+nav div button {
+	line-height: inherit;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	color: #000;
+	padding: 14px 16px;
+	font-size: 1em;
+	background-color: inherit;
+	font-family: inherit;
+}
+nav a:hover, nav div button:hover {
+	background-color: #d40037;
+}
+nav div div {
+	box-shadow: 0px 0px 10px 0px rgba(212,0,57,0.5);
+	display: none;
+	position: absolute;
+	background-color: #303030;
+	border-bottom: 1px solid #d40037;
+	border-right: 1px solid #d40037;
+	border-left: 1px solid #d40037;
+	min-width: 160px;
+	z-index: 1;
+}
+nav div div a {
+	font-weight: normal;
+	float: none;
+	color: #DDD;
+	padding: 12px 14px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+nav div div a:hover {
+	background-color: #1E1E1E;
+}
+nav div:hover > div {
+	display: block;
+}
+/* Page counter */
+div.counter {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	width: 120px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+div.count {
+	color: #F05;
+	text-align: center;
+	flex: 1;
+	height: 40px;
+	line-height: 40px;
+}
+button.left, button.right {
+	background-color: #1E1E1E;
+	cursor: pointer;
+	border-radius: 50%;
+	border: none;
+	padding: 0;
+	height: 40px;
+	outline: none;
+	color: #F05;
+	text-align: center;
+	flex: 1;
+	transition: 0.5s;
+}
+button.right:hover:not(.disabled), button.left:hover:not(.disabled) {
+	color: #1E1E1E;
+	background-color: #F05;
+}
+button.disabled {
+	cursor: auto !important;
+	background: none !important;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 1.2vw;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 100px;
+	background: #F05;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #d40037;
+}
+/* Scroll to Top Button */
+button#top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	outline: none;
+	background-color: #1E1E1E;
+	border: none;
+	cursor: pointer;
+	height: 1vw;
+	width: 2vw;
+}
+
+button#top:hover {
+	background-color: #F05;
+}
