@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SEW | Klasse 3</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="logo.png">
+	<link rel="apple-touch-icon" href="logo.png">
+	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="directAlert.css">
+
+	<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="directAlert.js"></script>
+	<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="buttonsLeft">
+			<button class="buttonL" data-bg="back.png" id="back"></button>
+			<button class="buttonL" data-bg="home.png" id="home"></button>
+			<button class="buttonL listAll" data-bg="listAll.png"></button>
+		</div>
+		<div class="mainContent active" data-id="1">
+			<h1>Bratose Lorimus Exus</h1>
+			<hr>
+			<p>Lorem Ipsum.</p>
+		</div>
+		<div class="mainContentBoneWrapper" data-id="2">
+			<img src="example_content.png">
+			<img src="example_content_2.png">
+		</div>
+		<div class="mainContent" data-id="3">
+			<h1>Lorem Epsum al-Al-Zakaria</h1>
+			<hr>
+			<p>Lorem Ipsum.</p>
+		</div>
+		<button id="next" data-bg="next.png"></button>
+	</div>
+
+	<div id="contentList">
+		<button class="buttonL listAll" data-bg="listAll.png"></button>
+		<div data-id="1"><span>16.4.2018</span>Bratose Lorimus Exus</div>
+		<!--<h1>Lol</h1>-->
+		<div data-id="2"><span>26.9.2019</span>Examplus Tinnitus</div>
+		<div data-id="3"><span>3.5.2020</span>Lorem Epsum al-Al-Zakaria</div>
+	</div>
+
+	<div id="errorWrapper"></div>
+</body>
+</html>

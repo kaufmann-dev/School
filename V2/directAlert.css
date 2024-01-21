@@ -1,0 +1,117 @@
+#errorWrapper {
+	position: fixed;
+	right: 10px;
+	bottom: 0;
+	display: inline-block;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column-reverse;
+}
+.error {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 10px;
+	background-color: #ca5e59;
+	border: 2px solid #9e4844;
+	border-radius: 3px;
+	display: inline-block;
+	color: #fff;
+}
+.errorMain {
+	float: left;
+	display: inline-block;
+	padding: 10px;
+	border-right: 2px solid #9e4844;
+}
+.errorMain img {
+	margin-right: 10px;
+	vertical-align: text-bottom;
+	height: 1.2em;
+}
+.errorClose {
+	transition: 0.5s;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+}
+.errorClose:hover {
+	background-color: #9e4844;
+}
+.errorClose img {
+	vertical-align: text-bottom;
+	height: 1.2em;
+}
+
+.alertWrapper {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.alert {
+	font-family: 'Open Sans', sans-serif;
+	width: 50%;
+	background-color: #eee;
+	overflow: auto;
+	color: #000;
+	border-radius: 50px;
+	max-height: calc(100% - 40px);
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.alertTop {
+	padding: 14px 16px;
+	background-color: #fafafa;
+	border-bottom: 1px solid #eee;
+}
+.alertMain {
+	background-color: #fff;
+	padding: 14px 24px;
+}
+.alertBottom {
+	overflow: auto;
+	padding: 10px;
+	background-color: #fafafa;
+	border-top: 1px solid #eee;
+}
+.alertBottom button {
+	cursor: pointer;
+	transition: 0.5s;
+	color: #fff;
+	padding: 8px 10px;
+	float: right;
+	background-color: #3593d2;
+	border-radius: 3px;
+	border: 2px solid #2772a5;
+}
+.alertBottom button:hover {
+	background-color: #2772a5;
+}
+
+@media (max-width: 1200px) {
+	.alert {
+		width: 70%;
+	}
+}
+@media (max-width: 800px) {
+	.alert {
+		width: 90%;
+	}
+}
+
+.alert::-webkit-scrollbar {
+	width: 1vw;
+}
+.alert::-webkit-scrollbar-track {
+	background: #eee;
+}
+.alert::-webkit-scrollbar-thumb {
+	border-radius: 100px;
+	background: #aaa;
+}
+.alert::-webkit-scrollbar-thumb:hover {
+	background: #888;
+}

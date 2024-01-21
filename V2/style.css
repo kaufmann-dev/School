@@ -1,0 +1,295 @@
+body {
+	background-color: #333;
+	padding: 0;
+	margin: 0;
+}
+img, video, audio, button, iframe {
+	outline: none;
+	vertical-align: top;
+}
+.mainContent h1, .mainContent h2, .mainContent h3, .mainContent h4, .mainContent h5, .mainContent h6 {
+	margin: 0;
+	color: rgb(66, 133, 244);
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+hr {
+	border: 0;
+    height: 1px;
+    background-color: rgb(66, 133, 244);
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+}
+
+/* UNDER CONSTRUCTION */
+#constructionContainer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+#constructionCenter {
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222;
+	padding: 50px;
+	width: 100%;
+}
+#constructionHeader {
+	margin-bottom: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 3rem;
+	display: block;
+}
+#constructionIndex {
+	padding: 0 2px;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5rem;
+	cursor: pointer;
+	border-bottom: 2px solid rgb(66, 133, 244);
+	transition: 0.2s;
+}
+#constructionIndex:hover {
+	color: rgb(66, 133, 244);
+}
+
+
+/* INDEX */
+#bigClassSelector {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+	box-sizing: border-box;
+	width: 1200px;
+	padding: 50px 20px;
+	margin: 0 auto;
+}
+#bigClassSelector div {
+	box-sizing: border-box;
+	flex-direction: row;
+	flex-shrink: 1;
+	flex-grow: 1;
+	cursor: pointer;
+	/*border-radius: 5px;*/
+	background-color: #eee;
+	padding: 50px 0;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2rem;
+	/*transition: 0.2s;*/
+}
+#bigClassSelector div:hover {
+	background-color: #bbb;
+}
+#smallClassSelector {
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	display: flex;
+	max-width: 100%;
+	overflow: auto;
+	width: 1000px;
+	padding: 0 20px 20px 20px;
+	margin: 0 auto;
+}
+#smallClassSelector div {
+	flex-direction: row;
+	box-sizing: border-box;
+	flex-shrink: 1;
+	flex-grow: 1;
+	/*transition: 0.2s;*/
+	cursor: pointer;
+	/*border-radius: 3px;*/
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	padding: 20px 0;
+}
+.lang { background-color: rgb(52, 168, 83); }
+.lang:hover { background-color: rgba(52, 168, 83, 0.8); }
+.it { background-color: rgb(66, 133, 244); }
+.it:hover { background-color: rgba(66, 133, 244, 0.8); }
+.other { background-color: rgb(251, 188, 5); }
+.other:hover { background-color: rgba(251, 188, 5, 0.8); }
+
+/* MAIN-PAGES */
+#wrapper {
+	margin: 0 auto;
+	padding: 20px;
+	overflow: auto;
+	width: 1000px;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+#buttonsLeft {
+	display: inline-block;
+	float: left;
+}
+button.buttonL {
+	display: block;
+	height: 30px;
+	width: 30px;
+	border: 2px solid rgb(66, 133, 244);
+	border-radius: 5px;
+	background-color: #000;
+	background-size: cover;
+	cursor: pointer;
+}
+#buttonsLeft button:not(:last-child) {
+	margin-bottom: 10px;
+}
+button#next {
+	float: left;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	border: 2px solid rgb(66, 133, 244);
+	border-radius: 5px;
+	background-color: #000;
+	background-size: cover;
+	cursor: pointer;
+}
+button#next:hover, button.buttonL:hover {
+	position: relative;
+	top: 2px;
+}
+button#next:active, button.buttonL:active {
+	background-color: rgb(66, 133, 244);
+}
+.mainContent {
+	box-sizing: border-box;
+	color: #fff;
+	padding: 20px;
+	margin: 0 20px;
+	float: left;
+	display: inline-block;
+	width: calc(100% - 100px);
+	background-color: #444;
+	vertical-align: top;
+}
+.mainContentBoneWrapper {
+	margin: 0 20px;
+	float: left;
+	display: inline-block;
+	width: calc(100% - 100px);
+	vertical-align: top;
+}
+.mainContentBoneWrapper img {
+	width: 100%;
+}
+.mainContentBoneWrapper img:not(:last-child) {
+	margin-bottom: 20px;
+}
+.mainContent:not(.active), .mainContentBoneWrapper:not(.active) {
+	display: none;
+}
+#contentList {
+	width: 50%;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #eee;
+	padding: 10px 20px;
+	max-height: calc(100% - 40px);
+	overflow: auto;
+}
+@media (max-height: 700px) {
+	#contentList {
+		width: 75%;
+	}
+}
+@media (max-height: 400px) {
+	#contentList {
+		width: calc(100% - 40px);
+	}
+}
+#contentList div {
+	cursor: pointer;
+}
+#contentList div:hover {
+	font-weight: 700;
+}
+#contentList div:not(:last-child) {
+	margin-bottom: 5px;
+}
+#contentList div span {
+	color: rgb(66, 133, 244);
+	margin-right: 5px;
+}
+#contentList button {
+	margin-bottom: 5px;
+}
+#contentList h1 {
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid #000;
+	display: inline-block;
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+@media(min-width: 800px) {
+	#bigClassSelector div {
+		flex-basis: 33.3%;
+	}
+	#bigClassSelector div:not(:last-child) {
+		border-right: 20px solid #333;
+	}
+	#smallClassSelector div {
+		flex-basis: 50%;
+	}
+	#smallClassSelector div:nth-child(odd):not(:last-child) {
+		border-right: 20px solid #333;
+	}
+	#smallClassSelector div:not(:last-child) {
+		border-bottom: 20px solid #333;
+	}
+}
+@media(max-width: 800px) and (min-width: 500px){
+	#bigClassSelector div {
+		flex-basis: 50%;
+	}
+	#bigClassSelector div:first-child {
+		border-right: 20px solid #333;
+	}
+	#bigClassSelector div:last-child {
+		border-top: 20px solid #333;
+	}
+	#smallClassSelector div {
+		flex-basis: 50%;
+	}
+	#smallClassSelector div:nth-child(odd):not(:last-child) {
+		border-right: 20px solid #333;
+	}
+	#smallClassSelector div:not(:last-child) {
+		border-bottom: 20px solid #333;
+	}
+}
+@media(max-width: 500px) {
+	#bigClassSelector div {
+		flex-basis: 100%;
+	}
+	#bigClassSelector div:not(:last-child) {
+		border-bottom: 20px solid #333;
+	}
+	#smallClassSelector div {
+		flex-basis: 100%;
+	}
+	#smallClassSelector div:not(:last-child) {
+		border-bottom: 20px solid #333;
+	}
+}

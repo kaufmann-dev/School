@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SEW | sk00l</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+	<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body class="mainBody">
+	<h1>SEW</h1>
+
+	<h2>C# Array-Grid</h2>
+	<div class="sewArray">
+		<div class="a">[0] [0]</div>
+		<div class="b">[0] [1]</div>
+		<div class="c">[0] [2]</div>
+		<div class="d">[1] [0]</div>
+		<div class="e">[1] [1]</div>
+		<div class="f">[1] [2]</div>
+		<div class="g">[2] [0]</div>
+		<div class="h">[2] [1]</div>
+		<div class="i">[2] [2]</div>
+	</div>
+
+	<h2>C# Properties</h2>
+	<h3><code>get</code> and <code>set</code></h3>
+	<textarea class="code" spellcheck="false">
+public int X { get; set; }</textarea>
+
+	<h3><code>get</code> and <code>set</code></h3>
+	<textarea class="code" spellcheck="false">
+public int X
+{
+    get => _x;
+    set => _x = value;
+}</textarea>
+
+	<h3><code>get</code> and <code>set</code> with <code>CheckConstrain()</code></h3>
+	<textarea class="code" spellcheck="false">
+public int X
+{
+    get => _x;
+    set
+    {
+        CheckConstrain(value);
+        _x = value;
+    }
+}</textarea>
+
+	<h3>only <code>get</code></h3>
+	<textarea class="code" spellcheck="false">
+public int X => _x;</textarea>
+
+	<h2>C# overwrite <code>Equals()</code> Method</h2>
+	<textarea class="code" spellcheck="false">
+protected bool Equals(Point other)
+{
+    return _x == other._x && _y == other._y;
+}
+
+public override bool Equals(object obj)
+{
+    if (ReferenceEquals(null, obj)) return false;
+    if (ReferenceEquals(this, obj)) return true;
+    if (obj.GetType() != this.GetType()) return false;
+    return Equals((Point) obj);
+}
+
+public override int GetHashCode()
+{
+    return HashCode.Combine(_x, _y);
+}</textarea>
+
+	<h2>C# Display Array</h2>
+	<textarea class="code" spellcheck="false">
+for (int y = 0; y < gameBoard.GetLength(0); y++)
+{
+    for (int x = 0; x < gameBoard.GetLength(1); x++)
+    {
+        Console.Write(gameBoard[y, x]);
+    }
+
+    Console.WriteLine();
+}</textarea>
+
+	<h2>C# Standard-Point</h2>
+	<textarea class="code" spellcheck="false">
+public class Point {
+    private int _x;
+    private int _y;
+
+    public int X
+    {
+        get => _x;
+        set
+        {
+            CheckConstrain(value);
+            _x = value;
+        }
+    }
+
+    public int Y
+    {
+        get => _y;
+        set
+        {
+            CheckConstrain(value);
+            _y = value;
+        }
+    }
+
+    public Point(int x, int y)
+    {
+        this.X = x;
+        this.Y = y;
+    }
+    
+    private void CheckConstrain(int val)
+    {
+        if(val < 0) throw new ArgumentOutOfRangeException("Value was negative");
+    }
+
+    public override string ToString()
+    {
+        return $"X: {this.X} Y: {this.Y}";
+    }
+
+    protected bool Equals(Point other)
+    {
+        return this.X == other.X && this.Y == other.Y;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((Point) obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(X, Y);
+    }
+}</textarea>
+
+	<div id="btnWrapper">
+        <a href="index.html"><button>Home</button></a>
+		<button id="topBtn">Top</button>
+		<button id="lowBtn">Bottom</button>
+	</div>
+</body>
+</html>
